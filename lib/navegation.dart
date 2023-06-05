@@ -1,3 +1,7 @@
+import 'package:daura/chat.dart';
+import 'package:daura/feed.dart';
+import 'package:daura/profile.dart';
+import 'package:daura/window.dart';
 import 'package:flutter/material.dart';
 import 'login.page.dart';
 
@@ -12,9 +16,10 @@ class _MyWidgetState extends State<MyWidget> {
   int currentIndex = 0;
   final screens = [
     LoginPage(),
-    Center(child: Text('Feed', style: TextStyle(fontSize: 60))),
-    Center(child: Text('Chat', style: TextStyle(fontSize: 60))),
-    Center(child: Text('Profile', style: TextStyle(fontSize: 60))),
+    feed(),
+    chat(),
+    profile(),
+    window(),
   ];
 
   @override
@@ -48,6 +53,11 @@ class _MyWidgetState extends State<MyWidget> {
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: "Person",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.window),
+              label: "Window",
               backgroundColor: Colors.white,
             ),
           ]));
